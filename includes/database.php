@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect('localhost', 'root', '', 'cinedb');
+$conexion = mysqli_connect('localhost', 'root', '', 'cinebd');
 
 // echo '<pre>';
 // var_dump($conexion);

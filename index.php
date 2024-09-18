@@ -1,3 +1,8 @@
+<?php
+    require 'includes/funciones.php';
+    $lista_peliculas = obtener_peliculas();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,58 +20,17 @@
         <main>
             <h1>Películas</h1>
             <div class="listado-peliculas">
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
-                <section class="pelicula">
-                    <p>La guerra de las Galaxias</p>
-                    <p>10.00 €</p>
-                    <button>Ver más</button>
-                </section>
+                <?php
+                    while($pelicula = mysqli_fetch_assoc($lista_peliculas)){ ?>
+                        <section class="pelicula">
+                            <p><?php echo $pelicula['titulo'];?></p>
+                            <p class="precio"><?php echo $pelicula['precio']; ?> €</p>
+                            <button>Ver más</button>
+                        </section>
+                <?php   } 
+                ?>
+
             </div>
-            
                 
         </main>
 

@@ -44,3 +44,41 @@ button {
 button:hover {
     background-color: rgb(118, 165, 42);
 }
+
+/* administrador */
+.crear{
+    text-align: center;
+}
+.nuevoRegistro{
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: aquamarine;
+    border: none;
+    margin: 0.3rem;
+    text-transform: uppercase;
+    color: darkgrey;
+}
+table tr:nth-child(odd){
+    background-color: azure;
+}
+
+.td-icono{
+    text-align: center;
+}
+.td-icono:hover {
+    background-color: cadetblue;
+}
+
+/* Formulario para nuevos registros */
+
+.formulario-creacion{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+.campo-form{
+    display: flex;
+    justify-content: space-between;
+}
