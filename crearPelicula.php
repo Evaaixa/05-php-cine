@@ -1,7 +1,8 @@
 <?php
+session_start();
+// comprobar de dónde viene la llamada
     require 'includes/funciones_directores.php';
     $lista_directores = obtener_directores();
-    var_dump($lista_directores);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,9 @@
 </head>
 <body>
     <div class="container">
-        <form class="formulaario-creacion" action="includes/control_peliculas.php" method="post">
+        <h1>Registrar nueva película</h1>
+        <form class="formulario-creacion" action="includes/control_peliculas.php" method="post">
+            <input type="hidden" name="metodo" value="crear">
             <div class="campo-form">
                 <label for="titulo">Título:</label>
                 <input type="text" name="titulo" required>
@@ -23,23 +26,37 @@
                 <label for="precio">Precio:</label>
                 <input type="number" name="precio" required>
             </div>
+            <div class="box campo-form">
+                <label for="directores">Director</label>
             <select name="directores">
-                <option value="">Selecciona un director</option>
                 <?php
                     while($director = mysqli_fetch_assoc($lista_directores)){
-                        echo "<option value='$director[id]'>$director[nombre]</option>";
-                    }
+                    echo "<option value='$director[id]'>$director[nombre] $director[apellido]</option>";
+                }
                 ?>
             </select>
-
-            <div class="campo-form sub-formulario">
-                <input class="verMas" type="submit" value="Enviar datos">
+            </div>
+            <div class="sub-formulario">
+                <a class="nuevoRegistro" href="admin.php">Volver</a>
+                <input class="nuevoRegistro" type="submit" value="Enviar datos">
             </div>
         </form>
+        <?php
+            if (isset($_SESSION['mensaje'])){
+                echo "<p>" . $_SESSION['mensaje'] . "</p>";
+                unset($_SESSION["mensaje"]); //Limpiar el mensaje después de mostrarlo
+            }
+            if (isset($_SESSION["datos_insertados"])){
+                echo "<h2>Ultima película guardada: </h2>";
+                echo '<ul>';
+                foreach ($_SESSION['datos_insertados'] as $campo => $valor) {
+                    echo '<li>' . ucfirst($campo) . ": " . htmlspecialchars($valor) . '</li>';
+                }
+                echo '</ul>';
 
+                unset($_SESSION['datos insertados']); //Limpiar los datos después de mostrarlos
+            }
+        ?>
     </div>
-    
-
-
 </body>
 </html>

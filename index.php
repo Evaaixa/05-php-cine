@@ -1,5 +1,5 @@
 <?php
-    require 'includes/funciones.php';
+    require 'includes/funciones_peliculas.php';
     $lista_peliculas = obtener_peliculas();
 ?>
 

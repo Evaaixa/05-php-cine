@@ -38,4 +38,12 @@ function modificar_pelicula(){
 
 }
 
-
+function eliminar_pelicula($id){
+    // importar conexión
+    require 'database.php';
+    // crear la consulta
+    $sql = "DELETE FROM pelicula WHERE id=$id;";
+    // realizar la consulta
+    $resultado = mysqli_query($conexion, $sql);
+    return $resultado;
+}
