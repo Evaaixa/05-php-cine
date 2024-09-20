@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: content-box;
@@ -69,13 +69,20 @@ button:hover {
 }
 
 /* administrador */
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
 .crear{
     text-align: center;
 }
 .nuevoRegistro{
     cursor: pointer;
     padding: 0.5rem 1rem;
-    background-color: rgb(74, 86, 250);
+    background-color: rgb(188, 74, 250);
     border: none;
     margin: 0.3rem;
     text-transform: uppercase;
@@ -83,13 +90,14 @@ button:hover {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     font-size: 1rem;
+    border-radius: 0.30rem;
 }
 .nuevoRegistro:hover{
     background-color: rgb(84, 202, 109);
 }
 
 table tr:nth-child(odd){
-    background-color: #b3dabc;
+    background-color: #c2dcc8;
 }
 .tabla-peliculas{
     border: 1px solid black;
@@ -106,11 +114,11 @@ table tr:nth-child(odd){
     cursor: pointer;
     padding: 0.2rem;
     border: none;
-    background-color: #85a28c;
     box-shadow: 2px 2px 4px -3px rgba(0, 0, 0, 0.75);
+    border-radius: 0.35rem;
 }
 .td-icono button:hover {
-    background-color: cadetblue;
+    background-color: rgb(156, 116, 162);
 }
 
 /* Formulario para nuevos registros */
@@ -121,6 +129,7 @@ table tr:nth-child(odd){
     margin: 0 auto;
     padding: 1rem;
     background-color: rgb(240, 214, 250);
+    border-radius: .5rem;
 }
 .campo-form{
     display: flex;
@@ -138,7 +147,7 @@ table tr:nth-child(odd){
 }
 .sub-formulario{
     text-align: end;
-}
+} */
 
 /* Select */
 .box select{
@@ -152,4 +161,71 @@ table tr:nth-child(odd){
 }
 .box select:hover {
     background-color: cadetblue;
+}
+/* revisar */
+body {
+    background-color: #f3e5f5;
+    color: #4a148c;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(74, 20, 140, 0.1);
+}
+
+h1, h2, h3 {
+    color: #6a1b9a;
+}
+
+a {
+    color: #8e24aa;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #6a1b9a;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #8e24aa;
+}
+
+input[type="text"], input[type="number"] {
+    border: 1px solid #9c27b0;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ce93d8;
+}
+
+th {
+    background-color: #9c27b0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f3e5f5;
 }

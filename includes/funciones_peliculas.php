@@ -1,5 +1,5 @@
 <?php
-
+// Consultas a la tabla películas
 function obtener_peliculas(){
     // importar conexión
     require 'database.php';
@@ -10,15 +10,20 @@ function obtener_peliculas(){
     // realizar la consulta
     $resultado = mysqli_query($conexion, $sql);
    return $resultado;
-
     // $datos = mysqli_fetch_assoc($resultado);
     // echo '<pre>';
     // var_dump($resultado);
     // echo '</pre>';
 }
 
-function obtener_pelicula_por_id(){
-
+function obtener_pelicula_por_id($id){
+    // importar conexión
+    require "database.php";
+    // preparar la consulta
+    $sql = "SELECT * FROM pelicula WHERE id=$id;";
+    // realizar la consulta
+    $resultado = mysqli_query($conexion, $sql);
+    return $resultado;
 }
 
 function crear_Pelicula($titulo, $precio, $director){
@@ -34,8 +39,11 @@ function crear_Pelicula($titulo, $precio, $director){
     return $resultado;
 }
 
-function modificar_pelicula(){
-
+function modificar_pelicula($id, $titulo, $precio, $director){
+    require "database.php";
+    $sql = "UPDATE pelicula SET titulo = '$titulo', precio = $precio, id_director = $director WHERE id = $id";
+    $resultado = mysqli_query($conexion, $sql);
+    return $resultado;
 }
 
 function eliminar_pelicula($id){
@@ -47,3 +55,4 @@ function eliminar_pelicula($id){
     $resultado = mysqli_query($conexion, $sql);
     return $resultado;
 }
+
